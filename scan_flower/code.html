@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#3af114",
+            "on-error": "#450900",
+            "secondary": "#9df197",
+            "secondary-fixed-dim": "#90e28a",
+            "inverse-surface": "#faf9f5",
+            "surface-container-highest": "#242624",
+            "tertiary": "#aa8aff",
+            "on-surface": "#faf9f5",
+            "on-secondary-container": "#a0f399",
+            "on-primary-container": "#0b5400",
+            "surface-container-lowest": "#000000",
+            "on-tertiary-container": "#ffffff",
+            "primary-fixed-dim": "#2de200",
+            "on-primary-fixed-variant": "#0e5e00",
+            "on-background": "#faf9f5",
+            "on-tertiary": "#270068",
+            "tertiary-container": "#7631fd",
+            "tertiary-fixed-dim": "#af91ff",
+            "on-secondary-fixed": "#00460e",
+            "primary": "#5dff3c",
+            "inverse-on-surface": "#545553",
+            "outline": "#747673",
+            "outline-variant": "#474846",
+            "surface-dim": "#0d0f0d",
+            "on-primary-fixed": "#063e00",
+            "on-tertiary-fixed-variant": "#4500a9",
+            "tertiary-fixed": "#bba2ff",
+            "on-secondary": "#005c15",
+            "surface-container-low": "#121412",
+            "primary-dim": "#2de200",
+            "on-secondary-fixed-variant": "#12661e",
+            "surface": "#0d0f0d",
+            "on-error-container": "#ffd2c8",
+            "inverse-primary": "#126f00",
+            "on-surface-variant": "#ababa8",
+            "error-container": "#b92902",
+            "surface-variant": "#242624",
+            "background": "#0d0f0d",
+            "error-dim": "#d53d18",
+            "primary-container": "#3af114",
+            "secondary-container": "#025e16",
+            "surface-container": "#181a18",
+            "secondary-dim": "#90e28a",
+            "tertiary-dim": "#844eff",
+            "error": "#ff7351",
+            "surface-tint": "#5dff3c",
+            "secondary-fixed": "#9df197",
+            "surface-bright": "#2a2d2a",
+            "on-primary": "#0d5d00",
+            "surface-container-high": "#1e201e",
+            "on-tertiary-fixed": "#1e0053"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .scanner-line {
+      animation: scan 3s ease-in-out infinite;
+    }
+    @keyframes scan {
+      0%, 100% { top: 0%; opacity: 0; }
+      10%, 90% { opacity: 1; }
+      50% { top: 100%; }
+    }
+    .bloom-effect {
+      box-shadow: 0 0 15px 2px #3ff51b;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body overflow-hidden h-screen select-none">
+<!-- Full-screen Camera Preview Background -->
+<div class="fixed inset-0 z-0 bg-[#0d0f0d]">
+<img class="w-full h-full object-cover opacity-80" data-alt="Lush pink wild flowers in a dark forest setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWggwOrUz42EcfEIHQH8RjX5NZwjKwZCmwN2ky2VbiEM-C0Q4P6cnFBcz0ayNhtqn-ds9lVBc97C8exZx-zq0ToWq-goPqlK4sCHOCVZ6FMTm_G4h-80dcTLJsjSAz71CjpSDHYmD6ER2yh6TMJIrw5OB3IMnVPOS74l2N9SjYEP9r5rblwS6hzW3eYjEpr_orz5FwWIeiSfnXt8YjS6AcsNFmiTGFGbkW1GI1nCyXSsyTZs059QCeSyxMCNZ1WF8sV1XQW0CVieg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+</div>
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0d0f0d] dark:bg-[#0d0f0d] flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#3ff51b] transition-transform active:scale-90">
+<span class="material-symbols-outlined text-2xl">flip_camera_ios</span>
+</button>
+</div>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-2xl text-[#3ff51b] dark:text-[#3ff51b] uppercase">
+      Scan Flower
+    </h1>
+<div class="flex items-center gap-4">
+<button class="text-[#3ff51b] transition-transform active:scale-90">
+<span class="material-symbols-outlined text-2xl">photo_library</span>
+</button>
+</div>
+</header>
+<!-- Scanning Interface -->
+<main class="relative z-10 flex flex-col items-center justify-center h-full px-8 pb-40">
+<!-- Viewfinder Area -->
+<div class="relative w-full aspect-square max-w-sm">
+<!-- Corner Brackets -->
+<div class="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-on-surface rounded-tl-xl opacity-80"></div>
+<div class="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-on-surface rounded-tr-xl opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-on-surface rounded-bl-xl opacity-80"></div>
+<div class="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-on-surface rounded-br-xl opacity-80"></div>
+<!-- Scanning Line Animation -->
+<div class="scanner-line absolute left-0 right-0 h-0.5 bg-primary bloom-effect"></div>
+<!-- Center Crosshair / Precision Lens Hints -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-4 h-[1px] bg-primary/40"></div>
+<div class="h-4 w-[1px] bg-primary/40 absolute"></div>
+</div>
+</div>
+<!-- Feedback / AI Hint -->
+<div class="mt-12 text-center space-y-2">
+<p class="font-headline font-bold text-lg tracking-tight text-on-surface">Target the bloom</p>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant">AI Scanner Active</p>
+</div>
+</main>
+<!-- Primary Action: Capture FAB -->
+<div class="fixed bottom-32 left-0 w-full flex justify-center z-50 pointer-events-none">
+<button class="pointer-events-auto w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-[0_0_32px_rgba(63,245,27,0.4)] active:scale-90 transition-transform border-[6px] border-[#0d0f0d]">
+<div class="w-14 h-14 rounded-full border-2 border-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">camera</span>
+</div>
+</button>
+</div>
+<!-- Shared Component: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#121412]/80 backdrop-blur-xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)] rounded-t-3xl flex justify-around items-center px-4 pb-6 pt-3">
+<!-- Home Tab -->
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- History Tab -->
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">History</span>
+</a>
+<!-- Active Tab Mock (Scan implied by screen intent, but mapping to About or Home usually, here we show Home as active for shell context if Scan isn't in nav) -->
+<!-- Applying Active Style to Profile as placeholder for navigation context -->
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Ambient Shadow for FAB (Tonal Layering Rule) -->
+<div class="fixed bottom-32 left-1/2 -translate-x-1/2 w-24 h-24 bg-primary/10 blur-[32px] rounded-full pointer-events-none"></div>
+</body></html>

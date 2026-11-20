@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORIETY - Generate Flower Image</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#3af114",
+                        "on-error": "#450900",
+                        "secondary": "#9df197",
+                        "secondary-fixed-dim": "#90e28a",
+                        "inverse-surface": "#faf9f5",
+                        "surface-container-highest": "#242624",
+                        "tertiary": "#aa8aff",
+                        "on-surface": "#faf9f5",
+                        "on-secondary-container": "#a0f399",
+                        "on-primary-container": "#0b5400",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-container": "#ffffff",
+                        "primary-fixed-dim": "#2de200",
+                        "on-primary-fixed-variant": "#0e5e00",
+                        "on-background": "#faf9f5",
+                        "on-tertiary": "#270068",
+                        "tertiary-container": "#7631fd",
+                        "tertiary-fixed-dim": "#af91ff",
+                        "on-secondary-fixed": "#00460e",
+                        "primary": "#5dff3c",
+                        "inverse-on-surface": "#545553",
+                        "outline": "#747673",
+                        "outline-variant": "#474846",
+                        "surface-dim": "#0d0f0d",
+                        "on-primary-fixed": "#063e00",
+                        "on-tertiary-fixed-variant": "#4500a9",
+                        "tertiary-fixed": "#bba2ff",
+                        "on-secondary": "#005c15",
+                        "surface-container-low": "#121412",
+                        "primary-dim": "#2de200",
+                        "on-secondary-fixed-variant": "#12661e",
+                        "surface": "#0d0f0d",
+                        "on-error-container": "#ffd2c8",
+                        "inverse-primary": "#126f00",
+                        "on-surface-variant": "#ababa8",
+                        "error-container": "#b92902",
+                        "surface-variant": "#242624",
+                        "background": "#0d0f0d",
+                        "error-dim": "#d53d18",
+                        "primary-container": "#3af114",
+                        "secondary-container": "#025e16",
+                        "surface-container": "#181a18",
+                        "secondary-dim": "#90e28a",
+                        "tertiary-dim": "#844eff",
+                        "error": "#ff7351",
+                        "surface-tint": "#5dff3c",
+                        "secondary-fixed": "#9df197",
+                        "surface-bright": "#2a2d2a",
+                        "on-primary": "#0d5d00",
+                        "surface-container-high": "#1e201e",
+                        "on-tertiary-fixed": "#1e0053"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanner-bracket {
+            width: 24px;
+            height: 24px;
+            border-color: #5dff3c;
+            position: absolute;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="bg-[#0d0f0d] fixed top-0 w-full z-50">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#3ff51b] transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-2xl text-[#3ff51b]">GENERATE FLOWER IMAGE</h1>
+</div>
+<button class="text-[#3ff51b] transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto min-h-screen">
+<!-- AI Creative Prompt Section -->
+<section class="space-y-8">
+<div class="space-y-2">
+<span class="text-primary font-headline font-bold text-xs uppercase tracking-[0.2em]">Botanical Synthesizer</span>
+<h2 class="text-3xl font-headline font-extrabold tracking-tight leading-none">Describe your <span class="text-primary">vision.</span></h2>
+<p class="text-on-surface-variant text-sm">Our AI translates your imagination into hyper-realistic botanical masterpieces.</p>
+</div>
+<!-- Input Area -->
+<div class="surface-container-low rounded-2xl p-6 space-y-4 border border-outline-variant/10">
+<div class="relative">
+<textarea class="w-full bg-surface-container-highest border-none rounded-xl p-4 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/50 min-h-[120px] resize-none font-body transition-all" placeholder="e.g. A luminescent midnight orchid with neon green veins, floating in a crystalline pond under a violet moon..."></textarea>
+</div>
+<!-- Quick Tags (Editorial Pattern) -->
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-xs text-on-surface-variant hover:text-primary transition-colors">#Cybernetic</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-xs text-on-surface-variant hover:text-primary transition-colors">#Macrophotography</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-xs text-on-surface-variant hover:text-primary transition-colors">#Luminescent</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-xs text-on-surface-variant hover:text-primary transition-colors">#Ethereal</button>
+</div>
+<button class="w-full bg-primary hover:bg-primary-fixed text-on-primary font-headline font-bold py-4 rounded-full transition-all active:scale-[0.98] shadow-[0_0_20px_rgba(93,255,60,0.2)]">
+                    GENERATE
+                </button>
+</div>
+<!-- Placeholder Area / Result -->
+<div class="relative aspect-square w-full rounded-2xl bg-surface-container-low overflow-hidden group">
+<!-- AI Lens Brackets -->
+<div class="scanner-bracket top-6 left-6 border-t-2 border-l-2"></div>
+<div class="scanner-bracket top-6 right-6 border-t-2 border-r-2"></div>
+<div class="scanner-bracket bottom-6 left-6 border-b-2 border-l-2"></div>
+<div class="scanner-bracket bottom-6 right-6 border-b-2 border-r-2"></div>
+<!-- Tonal Shift for Placeholder -->
+<div class="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center mb-6 shadow-inner">
+<span class="material-symbols-outlined text-4xl text-primary/40" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<p class="font-headline font-bold text-lg text-on-surface">Your generated image will appear here</p>
+<p class="text-sm text-on-surface-variant mt-2 max-w-[240px]">The neural network is ready to cultivate your creative seed.</p>
+</div>
+<!-- Subtle Texture Layer -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent pointer-events-none"></div>
+</div>
+</section>
+</main>
+<!-- Dialog (Feature Coming Soon) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-surface/80 backdrop-blur-md hidden" id="dialog">
+<div class="bg-surface-container-highest rounded-[2rem] p-8 max-w-sm w-full border border-outline-variant/20 shadow-2xl">
+<div class="flex justify-center mb-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="construction">construction</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-extrabold text-center mb-2">Feature Coming Soon</h3>
+<p class="text-on-surface-variant text-center text-sm mb-8">We're fine-tuning our botanical neural networks. This creative engine will be blooming in the next update.</p>
+<button class="w-full py-3 rounded-full bg-outline-variant/20 text-on-surface font-bold hover:bg-outline-variant/30 transition-colors" onclick="document.getElementById('dialog').classList.add('hidden')">
+                Understood
+            </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#121412]/80 backdrop-blur-xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)] rounded-t-3xl flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Trigger Dialog for demo purpose (normally handled by JS) -->
+<script>
+        // Simple mock interaction for the "Generate" button to show the requested dialog
+        document.querySelector('button.bg-primary').addEventListener('click', () => {
+            document.getElementById('dialog').classList.remove('hidden');
+        });
+    </script>
+</body></html>

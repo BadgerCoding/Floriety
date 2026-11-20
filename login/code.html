@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORIETY - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#3af114",
+              "on-error": "#450900",
+              "secondary": "#9df197",
+              "secondary-fixed-dim": "#90e28a",
+              "inverse-surface": "#faf9f5",
+              "surface-container-highest": "#242624",
+              "tertiary": "#aa8aff",
+              "on-surface": "#faf9f5",
+              "on-secondary-container": "#a0f399",
+              "on-primary-container": "#0b5400",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#2de200",
+              "on-primary-fixed-variant": "#0e5e00",
+              "on-background": "#faf9f5",
+              "on-tertiary": "#270068",
+              "tertiary-container": "#7631fd",
+              "tertiary-fixed-dim": "#af91ff",
+              "on-secondary-fixed": "#00460e",
+              "primary": "#5dff3c",
+              "inverse-on-surface": "#545553",
+              "outline": "#747673",
+              "outline-variant": "#474846",
+              "surface-dim": "#0d0f0d",
+              "on-primary-fixed": "#063e00",
+              "on-tertiary-fixed-variant": "#4500a9",
+              "tertiary-fixed": "#bba2ff",
+              "on-secondary": "#005c15",
+              "surface-container-low": "#121412",
+              "primary-dim": "#2de200",
+              "on-secondary-fixed-variant": "#12661e",
+              "surface": "#0d0f0d",
+              "on-error-container": "#ffd2c8",
+              "inverse-primary": "#126f00",
+              "on-surface-variant": "#ababa8",
+              "error-container": "#b92902",
+              "surface-variant": "#242624",
+              "background": "#0d0f0d",
+              "error-dim": "#d53d18",
+              "primary-container": "#3af114",
+              "secondary-container": "#025e16",
+              "surface-container": "#181a18",
+              "secondary-dim": "#90e28a",
+              "tertiary-dim": "#844eff",
+              "error": "#ff7351",
+              "surface-tint": "#5dff3c",
+              "secondary-fixed": "#9df197",
+              "surface-bright": "#2a2d2a",
+              "on-primary": "#0d5d00",
+              "surface-container-high": "#1e201e",
+              "on-tertiary-fixed": "#1e0053"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0d0f0d;
+            color: #faf9f5;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(36, 38, 36, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #5dff3c 0%, #3af114 100%);
+        }
+        .glow-shadow {
+            box-shadow: 0 8px 32px rgba(63, 245, 27, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<header class="fixed top-0 w-full z-50 bg-[#0d0f0d] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#3ff51b]">menu</span>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-2xl text-[#3ff51b]">FLORIETY</h1>
+</div>
+<span class="material-symbols-outlined text-[#3ff51b]">dark_mode</span>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-6 pt-24 pb-32">
+<div class="w-full max-w-md">
+<div class="mb-12 relative overflow-hidden rounded-xl aspect-[16/9] flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<img alt="Luminescent tropical leaves in darkness" class="absolute inset-0 w-full h-auto object-cover opacity-60" data-alt="Luminescent tropical leaves in dark botanical forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAwDL6OniPlldBAChTj3XG8GYZhYjhRwxF5coZgB5aGd7ZZoIPrJ1mWH2CNgKTQIY6TEgXxmIhrHKk7qg3yA-U4Lt7mIUgH4NyYk5o5k_LukIpL6huue6fceDhQe4Dyag88yTHV2c_GOzb6Be8xnZUYnyRSmEBNN-brIFYWFais8X7e39drYdYg-RI_Ae2_zmGeznAbbfwUOskfz9pPwmhF0YtDzHZ6RfLxQdRnyqo-04dyk_whHNDsL2cK0iALDHe5meMDJCpwsA"/>
+<div class="relative z-20 text-center px-4">
+<p class="font-headline font-extrabold text-4xl tracking-tighter text-on-surface">WELCOME BACK</p>
+<p class="font-label text-on-surface-variant text-xs tracking-[0.2em] mt-2">ILLUMINATING THE BOTANICAL WORLD</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant ml-1">Email Address</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-xl py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-primary transition-all outline-none" placeholder="explorer@floriety.ai" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant ml-1">Secret Key</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-xl py-4 px-5 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-primary transition-all outline-none" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="pt-4 flex flex-col gap-4">
+<button class="primary-gradient text-on-primary font-headline font-bold py-4 rounded-full w-full flex items-center justify-center gap-2 glow-shadow hover:scale-[1.02] active:scale-95 transition-all">
+<span>Login</span>
+<span class="material-symbols-outlined text-xl">login</span>
+</button>
+<button class="bg-surface-container-highest text-on-surface font-headline font-bold py-4 rounded-full w-full border border-outline-variant/20 hover:bg-surface-bright transition-all">
+                        Register
+                    </button>
+</div>
+<div class="flex justify-between items-center px-2 pt-2">
+<button class="text-xs text-on-surface-variant font-medium hover:text-primary transition-colors">Forgot Credentials?</button>
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+<button class="text-xs text-on-surface-variant font-medium hover:text-primary transition-colors">Privacy Guide</button>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#121412]/80 backdrop-blur-xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)] z-50 rounded-t-3xl">
+<div class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">About</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

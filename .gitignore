@@ -1,0 +1,16 @@
+.env*
+__pycache__/
+*.pyc
+.venv/
+.venv-*/
+venv/
+*.db
+*.sqlite
+*.sqlite3
+!.env.example
+floriety/android/local.properties
+floriety/linux/flutter/ephemeral/
+Floriety_Claude_Analysis.zip
+*.jks
+*.keystore
+key.properties

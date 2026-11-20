@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORIETY AI Chatbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#3af114",
+                        "on-error": "#450900",
+                        "secondary": "#9df197",
+                        "secondary-fixed-dim": "#90e28a",
+                        "inverse-surface": "#faf9f5",
+                        "surface-container-highest": "#242624",
+                        "tertiary": "#aa8aff",
+                        "on-surface": "#faf9f5",
+                        "on-secondary-container": "#a0f399",
+                        "on-primary-container": "#0b5400",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-container": "#ffffff",
+                        "primary-fixed-dim": "#2de200",
+                        "on-primary-fixed-variant": "#0e5e00",
+                        "on-background": "#faf9f5",
+                        "on-tertiary": "#270068",
+                        "tertiary-container": "#7631fd",
+                        "tertiary-fixed-dim": "#af91ff",
+                        "on-secondary-fixed": "#00460e",
+                        "primary": "#5dff3c",
+                        "inverse-on-surface": "#545553",
+                        "outline": "#747673",
+                        "outline-variant": "#474846",
+                        "surface-dim": "#0d0f0d",
+                        "on-primary-fixed": "#063e00",
+                        "on-tertiary-fixed-variant": "#4500a9",
+                        "tertiary-fixed": "#bba2ff",
+                        "on-secondary": "#005c15",
+                        "surface-container-low": "#121412",
+                        "primary-dim": "#2de200",
+                        "on-secondary-fixed-variant": "#12661e",
+                        "surface": "#0d0f0d",
+                        "on-error-container": "#ffd2c8",
+                        "inverse-primary": "#126f00",
+                        "on-surface-variant": "#ababa8",
+                        "error-container": "#b92902",
+                        "surface-variant": "#242624",
+                        "background": "#0d0f0d",
+                        "error-dim": "#d53d18",
+                        "primary-container": "#3af114",
+                        "secondary-container": "#025e16",
+                        "surface-container": "#181a18",
+                        "secondary-dim": "#90e28a",
+                        "tertiary-dim": "#844eff",
+                        "error": "#ff7351",
+                        "surface-tint": "#5dff3c",
+                        "secondary-fixed": "#9df197",
+                        "surface-bright": "#2a2d2a",
+                        "on-primary": "#0d5d00",
+                        "surface-container-high": "#1e201e",
+                        "on-tertiary-fixed": "#1e0053"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0f0d;
+        }
+        .chat-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-container::-webkit-scrollbar-thumb {
+            background: #242624;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#0d0f0d] fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#3ff51b]">menu</span>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-2xl text-[#3ff51b]">AI Chatbot</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#3ff51b]">dark_mode</span>
+</div>
+</header>
+<!-- Chat Canvas -->
+<main class="flex-1 mt-16 mb-24 overflow-y-auto chat-container px-4 py-6 space-y-6">
+<!-- Bot Message -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(63,245,27,0.1)]">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl rounded-tl-none border border-outline-variant/10">
+<p class="text-on-surface text-sm leading-relaxed">
+                    Hello! I am the Floriety AI. I can help you identify rare botanicals or diagnose your indoor jungle's health. What are we exploring today?
+                </p>
+<span class="text-[10px] text-on-surface-variant font-label mt-2 block opacity-50 uppercase tracking-widest">Bot • 09:41 AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-start justify-end gap-3 ml-auto max-w-[85%]">
+<div class="bg-primary p-4 rounded-xl rounded-tr-none shadow-[0_8px_24px_rgba(63,245,27,0.15)]">
+<p class="text-on-primary text-sm font-medium leading-relaxed">
+                    I found a strange fern in the conservatory with bioluminescent spores. Can you identify it?
+                </p>
+<span class="text-[10px] text-on-primary/60 font-label mt-2 block uppercase tracking-widest">You • 09:42 AM</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="User profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKtqakUiMyhn6n9GhbfnYLjg4lH7ChBEfYeBBvZF8cllHj2ScEmhmxvwcz9nQu2wFTAFWD67Z8SOHJ_CWY0tFzuvHRvGWAh6NJ8nuL-29EGGpJj86dup31z4LEwAv1Q6PxsTsYqECh7PHPDOw-JQxGHgnWoKYkmZovsfQAr6Pk4U8mnan6k40Q_BnHB1RX4d_wJjHD6y-jApSURp_nGwY-1TdE8fiIiPCi7N_JTeD2CwlOnNFJV-TdDnVGxD6ynezzzDbJMa5i1g"/>
+</div>
+</div>
+<!-- Bot Response Image Attachment (Visual Flourish) -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-low p-4 rounded-xl rounded-tl-none border border-outline-variant/10">
+<p class="text-on-surface text-sm leading-relaxed mb-3">
+                        That sounds like the <span class="text-primary font-bold">Lumen-Filix</span>. It's extremely rare. Does it look like this?
+                    </p>
+<div class="rounded-lg overflow-hidden border border-outline-variant/20">
+<img class="w-full h-48 object-cover" data-alt="Bioluminescent green fern in dark forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGrgGkFwaPaS72eqZjUdVMRkGLtiOpyyJKkoGQ1Pglch4-JyIhXQXbp347EmuWe_b3N1nlln9-M8dPdFUdgU4wqnQuq4wiVA8Y29MZ-30zLSi4vrDnrcXOWJDG_c9P1_YZ0JHvcBSpFBGq2UoWcLHfStFcmOPJtgTOnOaCvoNv5-Bu4fAzClUDKKeoIP44ShlkhZPpO37FbMrBxDyT_ZVRUu8Z1VQ09VkJza3NwHP9yDNG2qSvpjirM5wLsGv_7ea6ksh2f3mrvQc"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Bot Loading State -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm animate-pulse" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="bg-surface-container-low/40 backdrop-blur-md p-4 rounded-xl rounded-tl-none border border-outline-variant/5 flex gap-1">
+<div class="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce"></div>
+<div class="w-1.5 h-1.5 bg-primary/60 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+<div class="w-1.5 h-1.5 bg-primary/80 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Input Area -->
+<div class="fixed bottom-20 left-0 w-full px-4 pb-4">
+<div class="max-w-4xl mx-auto flex items-end gap-3 bg-surface-container-high/60 backdrop-blur-2xl p-3 rounded-2xl border border-outline-variant/10 shadow-2xl">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex-1 relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant/50 py-2 resize-none max-h-32 text-sm" placeholder="Ask about a species..." rows="1"></textarea>
+</div>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary w-10 h-10 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(63,245,27,0.3)] transition-all active:scale-90 shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-[#121412]/80 backdrop-blur-xl fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 z-50 rounded-t-3xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)]">
+<div class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

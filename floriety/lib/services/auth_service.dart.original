@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'api_service.dart';
+
+class AuthService {
+  static final AuthService _instance = AuthService._internal();
+  factory AuthService() => _instance;
+  AuthService._internal();
+
+  final ValueNotifier<bool> authState = ValueNotifier(false);
+
+  String? _token;
+  String? _email;
+  String? _name;
+  int? _userId;
+
+  String? get token => _token;
+  String? get email => _email;
+  String? get name => _name;
+  int? get userId => _userId;
+  bool get isLoggedIn => _token != null && _token!.isNotEmpty;
+
+  Future<void> login(String email, String password) async {
+    final data = await ApiService.login(email, password);
+    _token = data['token'];
+    _email = data['email'];
+    _name = data['name'];
+    _userId = data['user_id'];
+    authState.value = true;
+  }
+
+  Future<void> register(String email, String password) async {
+    final data = await ApiService.register(email, password);
+    _token = data['token'];
+    _email = data['email'];
+    _name = data['name'];
+    _userId = data['user_id'];
+    authState.value = true;
+  }
+
+  void logout() {
+    _token = null;
+    _email = null;
+    _name = null;
+    _userId = null;
+    authState.value = false;
+  }
+}

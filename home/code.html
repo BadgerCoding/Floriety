@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORIETY - AI Scanner System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#3af114",
+                        "on-error": "#450900",
+                        "secondary": "#9df197",
+                        "secondary-fixed-dim": "#90e28a",
+                        "inverse-surface": "#faf9f5",
+                        "surface-container-highest": "#242624",
+                        "tertiary": "#aa8aff",
+                        "on-surface": "#faf9f5",
+                        "on-secondary-container": "#a0f399",
+                        "on-primary-container": "#0b5400",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-container": "#ffffff",
+                        "primary-fixed-dim": "#2de200",
+                        "on-primary-fixed-variant": "#0e5e00",
+                        "on-background": "#faf9f5",
+                        "on-tertiary": "#270068",
+                        "tertiary-container": "#7631fd",
+                        "tertiary-fixed-dim": "#af91ff",
+                        "on-secondary-fixed": "#00460e",
+                        "primary": "#5dff3c",
+                        "inverse-on-surface": "#545553",
+                        "outline": "#747673",
+                        "outline-variant": "#474846",
+                        "surface-dim": "#0d0f0d",
+                        "on-primary-fixed": "#063e00",
+                        "on-tertiary-fixed-variant": "#4500a9",
+                        "tertiary-fixed": "#bba2ff",
+                        "on-secondary": "#005c15",
+                        "surface-container-low": "#121412",
+                        "primary-dim": "#2de200",
+                        "on-secondary-fixed-variant": "#12661e",
+                        "surface": "#0d0f0d",
+                        "on-error-container": "#ffd2c8",
+                        "inverse-primary": "#126f00",
+                        "on-surface-variant": "#ababa8",
+                        "error-container": "#b92902",
+                        "surface-variant": "#242624",
+                        "background": "#0d0f0d",
+                        "error-dim": "#d53d18",
+                        "primary-container": "#3af114",
+                        "secondary-container": "#025e16",
+                        "surface-container": "#181a18",
+                        "secondary-dim": "#90e28a",
+                        "tertiary-dim": "#844eff",
+                        "error": "#ff7351",
+                        "surface-tint": "#5dff3c",
+                        "secondary-fixed": "#9df197",
+                        "surface-bright": "#2a2d2a",
+                        "on-primary": "#0d5d00",
+                        "surface-container-high": "#1e201e",
+                        "on-tertiary-fixed": "#1e0053"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(36, 38, 36, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0d0f0d] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#3ff51b] transition-transform active:scale-90" data-icon="menu">menu</span>
+<h1 class="font-['Manrope'] font-black tracking-tighter text-2xl uppercase text-[#3ff51b]">FLORIETY</h1>
+</div>
+<div class="flex items-center">
+<button class="text-[#ababa8] hover:text-[#5dff3c] transition-colors transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-32 px-6 max-w-lg mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-10 text-center md:text-left">
+<p class="font-headline font-medium text-[10px] uppercase tracking-[0.2em] text-primary mb-2">Botanical Intelligence</p>
+<h2 class="font-headline font-extrabold text-4xl tracking-tight mb-1 text-on-surface">Digital Field Guide</h2>
+<p class="font-body text-on-surface-variant text-sm">AI scanner system</p>
+</section>
+<!-- Vertical Feature Cards -->
+<div class="flex flex-col gap-5">
+<!-- Feature Card 1: Scan Flower -->
+<button class="group relative overflow-hidden bg-surface-container-high rounded-xl p-6 text-left transition-all duration-300 active:scale-[0.98] border border-outline-variant/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary transition-colors group-hover:bg-primary/20">
+<span class="material-symbols-outlined text-3xl" data-icon="camera" style="font-variation-settings: 'FILL' 1;">camera</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface">Scan Flower</h3>
+<p class="text-on-surface-variant text-sm mt-0.5">Identify species instantly via AI</p>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10 pointer-events-none transition-transform group-hover:scale-110">
+<img alt="" class="w-full h-full object-cover" data-alt="Subtle abstract green leaf texture background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCnNNAOJtzebUWfigputCzSRMkMcC9UYpw8DvQC2OBPjh-CqttS56G9yLG1q3bb107d7jP_9U4WFLGI2Jbmr0zrJ7DYLaRVHQ73UB8XLRL7xaXyf0v2WMQ-cvqPiQGBIHj0c_V4RXU4EQL-1zBGND3C_FX4hlpNGtpthBtv68suqYEvEuO7nj5XMkavO6dJYv3D0dvyVsUilcXlNWzhfGnhFza9ZUbvbaDiqYZOM6IyIOujpdBe8Vaq2vsgZ_jKkI-KECNf6NuW9Q"/>
+</div>
+</button>
+<!-- Feature Card 2: AI Chatbot -->
+<button class="group relative overflow-hidden bg-surface-container-high rounded-xl p-6 text-left transition-all duration-300 active:scale-[0.98] border border-outline-variant/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary transition-colors group-hover:bg-secondary/20">
+<span class="material-symbols-outlined text-3xl" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface">AI Chatbot</h3>
+<p class="text-on-surface-variant text-sm mt-0.5">Ask questions about care &amp; history</p>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10 pointer-events-none transition-transform group-hover:scale-110">
+<img alt="" class="w-full h-full object-cover" data-alt="Subtle abstract blue digital pattern background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRb8gDNbksDmoDnBQPPmJld4GEfJbqrwerbXxN5hnS01OucdHG6tFEUPYP4zQ49GR44Xh0hSQBOGjykt5AjPFAXBxKoYwisEXO42rJMOHNcurC3CNfJddqWC3jtswk-BKm3-CwcSmyF82F1ldDF-pIlu92gC5e_OBQFhEzEjFYdqZpzJ7wyvjGEdGjsNPn2RsRWfr7zxE-heA01Rs6R69PwMNNofVE8i0P8Fo7DsamWO4HRdJpZiU_UKvbl8oGIkLFIvBP-Wqt2RQ"/>
+</div>
+</button>
+<!-- Feature Card 3: Generate Flower Image -->
+<button class="group relative overflow-hidden bg-surface-container-high rounded-xl p-6 text-left transition-all duration-300 active:scale-[0.98] border border-outline-variant/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary transition-colors group-hover:bg-tertiary/20">
+<span class="material-symbols-outlined text-3xl" data-icon="magic_button" style="font-variation-settings: 'FILL' 1;">magic_button</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface">Generate Image</h3>
+<p class="text-on-surface-variant text-sm mt-0.5">Create botanical art from text</p>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10 pointer-events-none transition-transform group-hover:scale-110">
+<img alt="" class="w-full h-full object-cover" data-alt="Subtle abstract purple sparkly magic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgANJk46VpUnLIxl8ICgPfCRqpESPQX6WtoaVlT0FwxCOK0cpYTOwZ9Sy9IhSvUq1WMTSbrUxffUoaLo4nTNlbZpxEWB3Zp1gWWJmahjqlwZqEj0EWSm12rKnBUamtGot-cwE7bKfuD3ne4bw_HtNx9g-gycUWVyDTyywYJjoofUKFhMSbQEZiAreVI1JdZchwqi3Q9VkM_rveQ1AJi8zazOVwz1VYkZO8JlhJZcTv6TJwoq77HwjRo9lLzi1LVEFHm-UbCLB7dI0"/>
+</div>
+</button>
+</div>
+<!-- Recent Discoveries Placeholder -->
+<section class="mt-12">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline font-bold text-lg">Recent Discoveries</h4>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">View All</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low rounded-xl overflow-hidden group">
+<div class="h-32 bg-surface-container-highest relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up of a vibrant pink rose with water droplets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYAL3B1aY_XhfPgz1oW1qoCn3YRO21eUmm7-QPb1iS5tbOqYh7kgAz5T0EsidCPy027lGe6zXuYTn39Iz6Dp7IHO3JpgjWcVpr1GSda-M_TlVCR3HkD5JVH7XVtyR68dkboBDT_7xBG4f7Euh4dAHhxjluLzYxkKdqBdZvOPBAmuyYcZ90brB5qov3c-mEjoQVdUypBpJtpyNNLn-qNLzf-V3Niowl66gSL0nFjQ7I0qEtouhXIT_KcAstsHZWDHbPnJ5BVgsVF_g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="p-3">
+<p class="font-headline font-bold text-sm text-on-surface">Hybrid Tea Rose</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tight">Rosa × hybrida</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden group">
+<div class="h-32 bg-surface-container-highest relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Sunlit yellow sunflower field in full bloom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4vg5tV8fH0GoejRfzkpinlUJkSGV-_HT0RUnE4Pbnh9SWiT16CNfq_s6oF_btXwkEofEp3zXz1VaH2yRPH0zcM0CAA5Yx7p0_MWLApDEJPjIecccTMVH30QsEU_xZ7f7f3cMgqUXZV2DnfzDFJ4lTxGqQ9bl5UKSEdrrc15sUaF62DzLwqZ4i2YXG0IGb034D0bLansaQG-O2ce_9lebPoDv89yy_ijkgdkP9uUdxDRCRpwxiNkqSN6g7UsfRCbUbDsyyPXNhiN8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="p-3">
+<p class="font-headline font-bold text-sm text-on-surface">Common Sunflower</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tight">Helianthus annuus</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#121412]/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)]">
+<!-- Home Active -->
+<a class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-0.5">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-0.5">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-0.5">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-0.5">Profile</span>
+</a>
+</nav>
+</body></html>

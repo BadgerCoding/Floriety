@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORIETY - About AI Scanner System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#3af114",
+              "on-error": "#450900",
+              "secondary": "#9df197",
+              "secondary-fixed-dim": "#90e28a",
+              "inverse-surface": "#faf9f5",
+              "surface-container-highest": "#242624",
+              "tertiary": "#aa8aff",
+              "on-surface": "#faf9f5",
+              "on-secondary-container": "#a0f399",
+              "on-primary-container": "#0b5400",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#2de200",
+              "on-primary-fixed-variant": "#0e5e00",
+              "on-background": "#faf9f5",
+              "on-tertiary": "#270068",
+              "tertiary-container": "#7631fd",
+              "tertiary-fixed-dim": "#af91ff",
+              "on-secondary-fixed": "#00460e",
+              "primary": "#5dff3c",
+              "inverse-on-surface": "#545553",
+              "outline": "#747673",
+              "outline-variant": "#474846",
+              "surface-dim": "#0d0f0d",
+              "on-primary-fixed": "#063e00",
+              "on-tertiary-fixed-variant": "#4500a9",
+              "tertiary-fixed": "#bba2ff",
+              "on-secondary": "#005c15",
+              "surface-container-low": "#121412",
+              "primary-dim": "#2de200",
+              "on-secondary-fixed-variant": "#12661e",
+              "surface": "#0d0f0d",
+              "on-error-container": "#ffd2c8",
+              "inverse-primary": "#126f00",
+              "on-surface-variant": "#ababa8",
+              "error-container": "#b92902",
+              "surface-variant": "#242624",
+              "background": "#0d0f0d",
+              "error-dim": "#d53d18",
+              "primary-container": "#3af114",
+              "secondary-container": "#025e16",
+              "surface-container": "#181a18",
+              "secondary-dim": "#90e28a",
+              "tertiary-dim": "#844eff",
+              "error": "#ff7351",
+              "surface-tint": "#5dff3c",
+              "secondary-fixed": "#9df197",
+              "surface-bright": "#2a2d2a",
+              "on-primary": "#0d5d00",
+              "surface-container-high": "#1e201e",
+              "on-tertiary-fixed": "#1e0053"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(36, 38, 36, 0.4);
+            backdrop-filter: blur(40px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-[#0d0f0d] dark:bg-[#0d0f0d] fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 w-full bg-[#121412]">
+<div class="flex items-center gap-4">
+<button class="text-[#3ff51b] dark:text-[#3ff51b] scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-[#3ff51b] font-black tracking-tighter text-2xl uppercase font-['Manrope']">FLORIETY</h1>
+</div>
+<button class="text-[#3ff51b] dark:text-[#3ff51b] scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<div class="mb-2">
+<span class="text-xs font-label tracking-[0.2em] text-primary uppercase font-bold">The Luminescent Herbarium</span>
+</div>
+<h2 class="text-6xl md:text-8xl font-headline font-extrabold text-primary-fixed tracking-tighter leading-[0.85] mb-6">
+                FLORIETY
+            </h2>
+<p class="text-xl font-headline font-medium text-on-surface tracking-tight mb-8">
+                AI scanner system
+            </p>
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] mb-12">
+<img class="w-full h-full object-cover" data-alt="Lush dark tropical leaves with glowing neon green veins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3kj2aShBqkBJU88GGozluhWK0840l5encELmj3SVyGsbDm3JtQPkCfjMlzWZTIZ7fBg12USfVmD8wfSElZ9r3yCiTXwq_9tXLxiiT7WGE6ib1qcEtu2RPvLDb3Y75BpGDBo-3rUmevYKKg69Sn0XiDnstXEynC9LIDZbjpAdO878KoAn3fwe_hAjdlx1rvtXJo5zP8-3dPTSFAzT1vIqJ1nTcVQ81kzjJIXBo8YNBbKskAGmyIAunWuBhN8J1sMw8Kz5NJbM2tC0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/80">Neural Engine Active</span>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+<!-- Feature 1 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">center_focus_strong</span>
+</div>
+<h3 class="font-headline text-lg font-bold">Instant Taxonomy</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Advanced neural networks identify genus and species with 99.4% precision in natural lighting conditions.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<h3 class="font-headline text-lg font-bold">Growth Insights</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Analyze soil health, sunlight requirements, and moisture levels through high-fidelity visual analysis.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-4 md:col-span-2">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-headline text-lg font-bold mb-1">Deep Learning Core</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Our proprietary botanical AI was trained on over 4.2 million curated herbarium specimens to provide editorial-grade insights directly to your device.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- System Details Section -->
+<section class="border-t border-outline-variant/20 pt-12 mb-16">
+<h4 class="text-[10px] font-label tracking-[0.3em] uppercase text-on-surface-variant mb-8">Technical Specifications</h4>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant font-medium text-sm">Engine Architecture</span>
+<span class="text-on-surface font-headline font-bold">NEURAL-FLORA v4.2</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant font-medium text-sm">Response Latency</span>
+<span class="text-on-surface font-headline font-bold">140ms average</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant font-medium text-sm">Data Reservoir</span>
+<span class="text-on-surface font-headline font-bold">Global Herbarium Cloud</span>
+</div>
+</div>
+</section>
+<!-- Footer / Credits -->
+<footer class="text-center py-8">
+<div class="inline-block px-4 py-2 bg-surface-container-highest rounded-full mb-6">
+<p class="text-[10px] font-label tracking-widest text-on-surface-variant uppercase">
+                    Designed &amp; Engineered by <span class="text-primary font-bold">LUMEN LABS</span>
+</p>
+</div>
+<p class="text-[10px] text-outline tracking-widest uppercase font-medium">
+                Version 2.0.4-Alpha • Build 8291
+            </p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#121412]/80 backdrop-blur-xl fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 z-50 rounded-t-3xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)]">
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

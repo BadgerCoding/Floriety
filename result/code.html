@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLORIETY - Scan Result</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#3af114",
+              "on-error": "#450900",
+              "secondary": "#9df197",
+              "secondary-fixed-dim": "#90e28a",
+              "inverse-surface": "#faf9f5",
+              "surface-container-highest": "#242624",
+              "tertiary": "#aa8aff",
+              "on-surface": "#faf9f5",
+              "on-secondary-container": "#a0f399",
+              "on-primary-container": "#0b5400",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#2de200",
+              "on-primary-fixed-variant": "#0e5e00",
+              "on-background": "#faf9f5",
+              "on-tertiary": "#270068",
+              "tertiary-container": "#7631fd",
+              "tertiary-fixed-dim": "#af91ff",
+              "on-secondary-fixed": "#00460e",
+              "primary": "#5dff3c",
+              "inverse-on-surface": "#545553",
+              "outline": "#747673",
+              "outline-variant": "#474846",
+              "surface-dim": "#0d0f0d",
+              "on-primary-fixed": "#063e00",
+              "on-tertiary-fixed-variant": "#4500a9",
+              "tertiary-fixed": "#bba2ff",
+              "on-secondary": "#005c15",
+              "surface-container-low": "#121412",
+              "primary-dim": "#2de200",
+              "on-secondary-fixed-variant": "#12661e",
+              "surface": "#0d0f0d",
+              "on-error-container": "#ffd2c8",
+              "inverse-primary": "#126f00",
+              "on-surface-variant": "#ababa8",
+              "error-container": "#b92902",
+              "surface-variant": "#242624",
+              "background": "#0d0f0d",
+              "error-dim": "#d53d18",
+              "primary-container": "#3af114",
+              "secondary-container": "#025e16",
+              "surface-container": "#181a18",
+              "secondary-dim": "#90e28a",
+              "tertiary-dim": "#844eff",
+              "error": "#ff7351",
+              "surface-tint": "#5dff3c",
+              "secondary-fixed": "#9df197",
+              "surface-bright": "#2a2d2a",
+              "on-primary": "#0d5d00",
+              "surface-container-high": "#1e201e",
+              "on-tertiary-fixed": "#1e0053"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #0d0f0d;
+        color: #faf9f5;
+        font-family: 'Inter', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(36, 38, 36, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .glow-shadow {
+        box-shadow: 0 8px 32px rgba(63, 245, 27, 0.1);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0d0f0d] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#3ff51b] transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-[#3ff51b] font-['Manrope'] font-black tracking-tighter text-2xl uppercase">FLORIETY</h1>
+</div>
+<button class="text-[#3ff51b] transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</header>
+<main class="pt-20 px-6 max-w-2xl mx-auto">
+<!-- Hero Thumbnail Section -->
+<section class="mb-8 mt-4">
+<div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(63,245,27,0.15)] bg-surface-container-low">
+<img alt="Close up of a vibrant blooming flower" class="w-full h-full object-cover" data-alt="Detailed macro shot of a blooming flower" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl4QfoPL5bmcGCbVGEoFDWUmfQbPskKXnbz5Y6t7rF7r8NS3I0teMe2vTy0sBjTwfNBiiyRTAu5-jUvf1RhgeP7aL16u6YSj-Ns3_3lOQgVEVY1G8RMo9mqTCoWEUtCZkki9ZZOWLadAOWzdeOLMuQx_rnvO7d5M2Uk9P4u_xoZ_Rt9L1RQGKQyBmeqrg_tCGtT4qybxJesIm4XMVl6_CphXPZm08RGp9jyAhBciEkshjmtsyLRIUZZqQEKQcZC_fkWqBocEjK6xo"/>
+<!-- Corner Brackets Overlay -->
+<div class="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-6 left-6 w-8 h-8 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-6 left-6 right-6 px-4 py-3 glass-card rounded-xl">
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">Analysis Complete</p>
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Helianthus annuus</h2>
+</div>
+</div>
+</section>
+<!-- Result Details Grid -->
+<div class="space-y-3">
+<!-- 1. Flower Name -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 transition-all hover:bg-surface-container-high group">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Flower Name</p>
+<p class="text-on-surface font-headline font-semibold text-lg">Common Sunflower</p>
+</div>
+</div>
+<!-- 2. Variety -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 transition-all hover:bg-surface-container-high">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="schema">schema</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Variety</p>
+<p class="text-on-surface font-headline font-semibold text-lg">Russian Mammoth Giant</p>
+</div>
+</div>
+<!-- 3. Origin -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 transition-all hover:bg-surface-container-high">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Origin</p>
+<p class="text-on-surface font-headline font-semibold text-lg">North America (Domesticated)</p>
+</div>
+</div>
+<!-- 4. Care Instructions -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 transition-all hover:bg-surface-container-high">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Care Instructions</p>
+<p class="text-on-surface font-headline font-semibold text-lg">Full sun; water deeply once weekly</p>
+</div>
+</div>
+<!-- 5. Allergen -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 transition-all hover:bg-surface-container-high">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Allergen</p>
+<p class="text-on-surface font-headline font-semibold text-lg">Yes - Pollen may cause hay fever</p>
+</div>
+</div>
+<!-- 6. Disease Detection -->
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 transition-all hover:bg-surface-container-high">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" data-icon="health_and_safety">health_and_safety</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-widest font-bold">Disease Detection</p>
+<p class="text-on-surface font-headline font-semibold text-lg">Negative - Healthy leaf tissue observed</p>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="mt-8">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-headline font-bold text-lg shadow-[0_0_20px_rgba(93,255,60,0.3)] active:scale-95 transition-transform">
+                Generate Full Care Guide
+            </button>
+</div>
+</main>
+<!-- Snackbar -->
+<div class="fixed bottom-28 left-6 right-6 flex justify-center z-40">
+<div class="bg-surface-container-highest px-6 py-3 rounded-full flex items-center gap-3 border border-outline-variant/20 shadow-xl">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-on-surface text-sm font-medium">Scan saved to history</span>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#121412]/80 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 z-50 rounded-t-3xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)]">
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

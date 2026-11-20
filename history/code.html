@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#3af114",
+              "on-error": "#450900",
+              "secondary": "#9df197",
+              "secondary-fixed-dim": "#90e28a",
+              "inverse-surface": "#faf9f5",
+              "surface-container-highest": "#242624",
+              "tertiary": "#aa8aff",
+              "on-surface": "#faf9f5",
+              "on-secondary-container": "#a0f399",
+              "on-primary-container": "#0b5400",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#2de200",
+              "on-primary-fixed-variant": "#0e5e00",
+              "on-background": "#faf9f5",
+              "on-tertiary": "#270068",
+              "tertiary-container": "#7631fd",
+              "tertiary-fixed-dim": "#af91ff",
+              "on-secondary-fixed": "#00460e",
+              "primary": "#5dff3c",
+              "inverse-on-surface": "#545553",
+              "outline": "#747673",
+              "outline-variant": "#474846",
+              "surface-dim": "#0d0f0d",
+              "on-primary-fixed": "#063e00",
+              "on-tertiary-fixed-variant": "#4500a9",
+              "tertiary-fixed": "#bba2ff",
+              "on-secondary": "#005c15",
+              "surface-container-low": "#121412",
+              "primary-dim": "#2de200",
+              "on-secondary-fixed-variant": "#12661e",
+              "surface": "#0d0f0d",
+              "on-error-container": "#ffd2c8",
+              "inverse-primary": "#126f00",
+              "on-surface-variant": "#ababa8",
+              "error-container": "#b92902",
+              "surface-variant": "#242624",
+              "background": "#0d0f0d",
+              "error-dim": "#d53d18",
+              "primary-container": "#3af114",
+              "secondary-container": "#025e16",
+              "surface-container": "#181a18",
+              "secondary-dim": "#90e28a",
+              "tertiary-dim": "#844eff",
+              "error": "#ff7351",
+              "surface-tint": "#5dff3c",
+              "secondary-fixed": "#9df197",
+              "surface-bright": "#2a2d2a",
+              "on-primary": "#0d5d00",
+              "surface-container-high": "#1e201e",
+              "on-tertiary-fixed": "#1e0053"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0d0f0d;
+            font-family: 'Inter', sans-serif;
+        }
+        .editorial-header {
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .glass-card {
+            background: rgba(36, 38, 36, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#0d0f0d] fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#3ff51b] transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-2xl text-[#3ff51b]">History</h1>
+</div>
+<button class="text-[#3ff51b] transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Search & Filter Area (Tonal Separation) -->
+<section class="mb-8 p-4 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-3 bg-surface-container-highest px-4 py-3 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md text-on-surface placeholder-on-surface-variant w-full" placeholder="Search your herbarium..." type="text"/>
+</div>
+</section>
+<!-- History List (Bento-lite Layout) -->
+<div class="space-y-4">
+<!-- History Item 1 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden flex items-stretch transition-all hover:bg-surface-container-high">
+<div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+<img class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of a vibrant purple orchid flower" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_2-37tcrYxONOOjiDR8xGkT3chZxyOzuu-DGLqFkRNrbIprzZP-2FQeL_Wbh075yZrf8kraDDZZ4DCmzCjdaW5JKUNFa7lOjWTV_2T1EM59Cq1tbtfl4TtXU6gt3U_rdw9Cgyfu9yOiOumqds7tGjUinzok6fKLsVpyRkejnGj8pEc23IeMhlFxvUM40U4cM5OTexU9ui1A73XuB2oI2ghKspzmPaqhPPrTp_Yzxz0V4mHa0T0aSe3YWicx-XWqCKiC9NuU27wm8"/>
+</div>
+<div class="flex-grow p-4 flex flex-col justify-center">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold">Orchidaceae</span>
+<h3 class="text-lg font-headline font-bold text-on-surface leading-tight">Purple Phalaenopsis</h3>
+<p class="text-xs text-on-surface-variant font-body mt-1">Found in botanical garden</p>
+</div>
+<button class="p-2 text-error-dim opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant/60 font-medium">OCT 12, 2023</span>
+<div class="flex -space-x-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden flex items-stretch transition-all hover:bg-surface-container-high">
+<div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+<img class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500" data-alt="Macro shot of a bright red tulip blossom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7D1LMdtH8F2BGxmgJWm9uOHPmgE-gQ0_unwcLTUMQiP7I1ZvI-LrHqAD69MO-AcQf3ca7R0BpqUva-HbW1O7q2W7RluLHzmTtStIavapqFf_xMCNyOt-tVm6kRFh9wJO1coRtj4RBSVAclRcDusaGa9GrVfPCg6oeAsMkcNYT_jO4OEfcoWQX7spZLmmAo0osyzACtEUSmeDQFOW8CAsV7tXP7GCxUF-HsmUgCLBG-xeLInCI-xN9uhzTb-BM1MbrHhnLZlnE5kw"/>
+</div>
+<div class="flex-grow p-4 flex flex-col justify-center">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold">Liliaceae</span>
+<h3 class="text-lg font-headline font-bold text-on-surface leading-tight">Red Darwin Hybrid</h3>
+<p class="text-xs text-on-surface-variant font-body mt-1">Backyard garden scan</p>
+</div>
+<button class="p-2 text-error-dim opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant/60 font-medium">SEP 28, 2023</span>
+</div>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden flex items-stretch transition-all hover:bg-surface-container-high">
+<div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+<img class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500" data-alt="Wild yellow sunflowers in a field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh4MJBE4HS63xuCR0v17lfYpuohQMRbkOp54vtscLSmf7JqJtHoW89bgK0ZPIR-i9ha5WlJVBrcg4nwfp0MmCCSmGk81HAz50i0ijP5Kr2o0sKkAmkot27ntAeXLCvejfMJT4Fe6nGJSf9GIZ7sSEnlfCKUkCxrVQLtytyVZH1o_u3BgNq6a4o7vCddI37TNy_KB1dLcyKgFaXrAn830u6UFYGT-1pqBNx_qOiV9j-Pfc8kMrirwWBzkVWwg6Jtj9jW-5opObjgKg"/>
+</div>
+<div class="flex-grow p-4 flex flex-col justify-center">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold">Asteraceae</span>
+<h3 class="text-lg font-headline font-bold text-on-surface leading-tight">Common Sunflower</h3>
+<p class="text-xs text-on-surface-variant font-body mt-1">Morning walk identification</p>
+</div>
+<button class="p-2 text-error-dim opacity-40 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant/60 font-medium">AUG 15, 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default, shown here conceptually as alternative) -->
+<!-- 
+        <div class="flex flex-col items-center justify-center py-20 text-center">
+            <div class="w-24 h-24 bg-surface-container-low rounded-full flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-4xl text-outline-variant">potted_plant</span>
+            </div>
+            <h2 class="text-xl font-headline font-bold text-on-surface">No scans yet.</h2>
+            <p class="text-on-surface-variant mt-2 max-w-[200px]">Scan a flower to see your history.</p>
+            <button class="mt-8 bg-primary text-on-primary font-bold py-3 px-8 rounded-full shadow-[0_0_20px_rgba(93,255,60,0.2)]">
+                Start Scanning
+            </button>
+        </div>
+        -->
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#121412]/80 backdrop-blur-xl border-t border-[#242624]/30 shadow-[0_-8px_32px_rgba(63,245,27,0.1)] z-50 rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#3ff51b] bg-[#3ff51b]/10 rounded-full px-4 py-1 shadow-[0_0_15px_rgba(63,245,27,0.2)] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#ababa8] opacity-60 hover:opacity-100 hover:text-[#3ff51b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Glow (Ambient) -->
+<div class="fixed bottom-24 right-6 pointer-events-none">
+<div class="w-16 h-16 bg-primary opacity-10 blur-3xl rounded-full"></div>
+</div>
+</body></html>

@@ -1,0 +1,146 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
+
+class ApiService {
+  // Use 10.0.2.2 for Android emulator, localhost for others
+  static String get _baseUrl {
+    if (kIsWeb) return 'http://localhost:5000';
+    try {
+      if (Platform.isAndroid) return 'http://10.0.2.2:5000';
+    } catch (_) {}
+    return 'http://localhost:5000';
+  }
+
+  static Map<String, String> _headers(String? token) {
+    final h = <String, String>{'Content-Type': 'application/json'};
+    if (token != null && token.isNotEmpty) {
+      h['Authorization'] = 'Bearer $token';
+    }
+    return h;
+  }
+
+  // ── Auth ────────────────────────────────────────────────────────
+
+  static Future<Map<String, dynamic>> register(String email, String password) async {
+    final res = await http.post(
+      Uri.parse('$_baseUrl/api/register'),
+      headers: _headers(null),
+      body: jsonEncode({'email': email, 'password': password}),
+    );
+    final data = jsonDecode(res.body);
+    if (res.statusCode == 201) return data;
+    throw Exception(data['error'] ?? 'Registration failed');
+  }
+
+  static Future<Map<String, dynamic>> login(String email, String password) async {
+    final res = await http.post(
+      Uri.parse('$_baseUrl/api/login'),
+      headers: _headers(null),
+      body: jsonEncode({'email': email, 'password': password}),
+    );
+    final data = jsonDecode(res.body);
+    if (res.statusCode == 200) return data;
+    throw Exception(data['error'] ?? 'Login failed');
+  }
+
+  // ── Profile ─────────────────────────────────────────────────────
+
+  static Future<Map<String, dynamic>> getProfile(String token) async {
+    final res = await http.get(
+      Uri.parse('$_baseUrl/api/profile'),
+      headers: _headers(token),
+    );
+    if (res.statusCode == 200) return jsonDecode(res.body);
+    throw Exception('Failed to load profile');
+  }
+
+  static Future<void> updateProfile(String token, {String? nickname, String? description}) async {
+    final body = <String, dynamic>{};
+    if (nickname != null) body['nickname'] = nickname;
+    if (description != null) body['description'] = description;
+    final res = await http.put(
+      Uri.parse('$_baseUrl/api/profile'),
+      headers: _headers(token),
+      body: jsonEncode(body),
+    );
+    if (res.statusCode != 200) {
+      final data = jsonDecode(res.body);
+      throw Exception(data['error'] ?? 'Failed to update profile');
+    }
+  }
+
+  // ── History ─────────────────────────────────────────────────────
+
+  static Future<List<Map<String, dynamic>>> getHistory(String token) async {
+    final res = await http.get(
+      Uri.parse('$_baseUrl/api/history'),
+      headers: _headers(token),
+    );
+    if (res.statusCode == 200) {
+      final List<dynamic> list = jsonDecode(res.body);
+      return list.map((e) => Map<String, dynamic>.from(e)).toList();
+    }
+    throw Exception('Failed to load history');
+  }
+
+  static Future<void> addHistory(String token, Map<String, String> flowerData) async {
+    final body = <String, dynamic>{
+      'flower_name': flowerData['name'] ?? '',
+      'scientific': flowerData['scientific'] ?? '',
+      'family': flowerData['family'] ?? '',
+      'variety_appearance': flowerData['variety_appearance'] ?? '',
+      'origin': flowerData['origin'] ?? '',
+      'habitat': flowerData['habitat'] ?? '',
+      'allergen': flowerData['allergen'] ?? '',
+      'disease': flowerData['disease'] ?? '',
+      'care_list': flowerData['care_list'] ?? '',
+      'description': flowerData['description'] ?? '',
+    };
+    final res = await http.post(
+      Uri.parse('$_baseUrl/api/history'),
+      headers: _headers(token),
+      body: jsonEncode(body),
+    );
+    if (res.statusCode != 201) {
+      throw Exception('Failed to save history');
+    }
+  }
+
+  static Future<bool> toggleFavorite(String token, int historyId) async {
+    final res = await http.put(
+      Uri.parse('$_baseUrl/api/history/$historyId/favorite'),
+      headers: _headers(token),
+    );
+    if (res.statusCode == 200) {
+      final data = jsonDecode(res.body);
+      return data['is_favorite'] as bool;
+    }
+    throw Exception('Failed to toggle favorite');
+  }
+
+  static Future<void> deleteHistory(String token, int historyId) async {
+    final res = await http.delete(
+      Uri.parse('$_baseUrl/api/history/$historyId'),
+      headers: _headers(token),
+    );
+    if (res.statusCode != 200) {
+      throw Exception('Failed to delete history');
+    }
+  }
+
+  // ── Feedback ────────────────────────────────────────────────────
+
+  static Future<void> submitFeedback(String token, {required String gmail, required String subject, required String message}) async {
+    final res = await http.post(
+      Uri.parse('$_baseUrl/api/feedback'),
+      headers: _headers(token),
+      body: jsonEncode({'gmail': gmail, 'subject': subject, 'message': message}),
+    );
+    if (res.statusCode != 201) {
+      final data = jsonDecode(res.body);
+      throw Exception(data['error'] ?? 'Failed to submit feedback');
+    }
+  }
+}
